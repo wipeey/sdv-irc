@@ -5,7 +5,8 @@ from time import sleep
 
 # Server informations
 host = 'localhost'
-port = 3301
+port = 1234
+
 
 # Executes whenever a client connects to the server
 def handle_client(conn, addr):
@@ -22,6 +23,8 @@ def handle_client(conn, addr):
                 print(data.decode())
 
 
+# Setting up listener
+# Starting core threads
 def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))

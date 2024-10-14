@@ -20,15 +20,16 @@ def send_messages(s):
 
 def main():
     host = 'localhost'
-    port = 3301
+    port = 1234
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((host, port))
 
-    send_msg = threading.Thread(target=send_messages, args=(s))
-    recv_msg = threading.Thread(target=receive_messages, args=(s))
+    send_msg = threading.Thread(target=send_messages, args=(s,))
+    recv_msg = threading.Thread(target=receive_messages, args=(s,))
 
-    send_msg.start(); recv_msg.start()
+    send_msg.start()
+    recv_msg.start()
 
 
 if __name__ == '__main__':
