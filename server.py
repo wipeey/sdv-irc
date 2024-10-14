@@ -1,6 +1,7 @@
 #!/bin/python3
 import socket
 import threading
+from time import sleep
 
 # Server informations
 host = 'localhost'
