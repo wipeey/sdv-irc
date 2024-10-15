@@ -33,7 +33,9 @@ class ServerMain:
         # Server information
         self.host = host
         self.port = port
-        self.connected_clients = []
+        self.connected_clients = {
+            # conn: username
+        }
 
     # Executes whenever a client connects to the server
     def handle_client(self, conn, addr):
@@ -107,11 +109,12 @@ class ServerMain:
             s.listen()
             conn, addr = s.accept()
 
-            self.connected_clients.append(conn)
+            self.connected_clients[conn] = 'username'
             # print(self.get_connected_amount(), 'clients connected')
 
             connection_thread = threading.Thread(target=self.handle_client, args=(conn, addr))
             connection_thread.start()
+
 
 # Main execution now creates an instance of ServerMain and runs it
 if __name__ == '__main__':
