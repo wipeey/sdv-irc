@@ -1,3 +1,4 @@
+#!/bin/python3
 import tkinter as tk
 from tkinter import ttk
 from backend import connect_to_server, send_messages
@@ -66,14 +67,18 @@ class App(tk.Frame):
     def send_message(self, event=None):
         # Retrieve the message entered by the user
         message = self.message_entry.get()
+        message.split()
+        print(len(message))
 
-        # Display the message in the log
-        self.display_message(f"You: {message}")
+        
 
         # (You would send the message to the server here, using sockets)
         if self.sock:
-            send_messages(self.sock, message)
-            self.message_entry.delete(0, tk.END)
+            if len(message.strip().split()) > 0:
+                # Display the message in the log
+                self.display_message(f"You: {message}")
+                send_messages(self.sock, message)
+                self.message_entry.delete(0, tk.END)
 
         # Clear the message entry after sending
         self.message_entry.delete(0, tk.END)

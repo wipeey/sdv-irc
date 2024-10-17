@@ -29,7 +29,7 @@ class ServerCommands:
 
 
 class ServerMain:
-    def __init__(self, host='localhost', port=1234):
+    def __init__(self, host='10.111.0.211', port=1234):
         # Server information
         self.host = host
         self.port = port

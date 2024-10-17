@@ -24,7 +24,7 @@ def send_messages(s, message):
         print(f"Error sending message: {e}")
 
 # Function to connect to the server
-def connect_to_server(host='localhost', port=1234, update_chat_callback=None):
+def connect_to_server(host='10.111.0.211', port=1234, update_chat_callback=None):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     try:
