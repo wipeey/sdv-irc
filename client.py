@@ -1,6 +1,7 @@
 #!/bin/python3
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 from backend import connect_to_server, send_messages
 
 class App(tk.Frame):
@@ -12,14 +13,15 @@ class App(tk.Frame):
         self.master.geometry("800x600")
         self.center_window(800, 600)
 
-        # Create the message log (Text widget)
-        self.create_message_log()
+        self.page_mode = "using"
+        if self.page_mode == "using":
+            self.create_message_log()
+            self.create_footer()
 
-        # Create the footer with the search bar and buttons
-        self.create_footer()
+        elif self.page_mode == "login":
+            self.create_login_page()
 
         # Connect to the server
-        self.sock = connect_to_server(update_chat_callback=self.display_message)
 
         # Show the main content
         self.pack()
@@ -36,6 +38,33 @@ class App(tk.Frame):
 
         # Position the window
         self.master.geometry(f"{width}x{height}+{pos_x}+{pos_y}")
+
+    def create_login_page(self):
+        # Nom d'utilisateur
+        username_label = tk.Label(self.master, text="Username")
+        username_label.pack(pady=10)
+        self.username_entry = tk.Entry(self.master)
+        self.username_entry.pack()
+
+        # Mot de passe
+        password_label = tk.Label(self.master, text="Password")
+        password_label.pack(pady=10)
+        self.password_entry = tk.Entry(self.master, show="*")
+        self.password_entry.pack()
+
+        # Bouton de connexion
+        login_button = tk.Button(self.master, text="Login", command=self.login)
+        login_button.pack(pady=20)
+        self.password_entry.bind("<Return>", self.login)
+
+    def login(self, msg):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+        
+        if username == "admin" and password == "password":
+            messagebox.showinfo("Login Successful", "Welcome, admin!")
+        else:
+            messagebox.showerror("Login Failed", "Invalid username or password")
 
     def create_message_log(self):
         """frame for the message log"""
