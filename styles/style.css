@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, body {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #132234;
+    --secondary-color: #ced4d9;
+}
+
+/* Responsive design for computer screens */
+@media screen and (min-width: 1024px) {
+    header {
+        background-color: var(--primary-color);
+    }
+    .nav {
+        background-color: var(--primary-color);
+    }
+
+    .App {
+        border-top: black 1px dotted;
+        border-bottom: black 2px dotted;
+        padding: 10vh 0 10vh 50vh;
+    }
+
+    #chat {
+        width: 60%;
+        height: 50vh;
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 2%;
+        margin-bottom: 2em;
+
+    }
+    #messageInput {
+        width: 60%;
+        overflow: hidden; /* Masquer la barre de défilement */
+        min-height: 1.5em;
+        box-sizing: border-box; /* Inclut le padding dans la largeur */
+        line-height: 1.5em;     /* Assure un espacement uniforme entre les lignes */
+    }
+}
