@@ -1,36 +1,13 @@
-const chatDiv = document.getElementById('chat');
-const messageInput = document.getElementById('messageInput');
-// Installation requise : npm install ws
-const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 8080 });
-
-wss.on('connection', (ws) => {
-    ws.on('message', (message) => {
-        console.log(`Message reçu : ${message}`);
-        // Réémet le message à tous les clients connectés
-        wss.clients.forEach(client => {
-            if (client.readyState === WebSocket.OPEN) {
-                client.send(message);
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollingContent = document.getElementById('scrollingContent');
+    const clone = scrollingContent.cloneNode(true); // Clone le contenu
+    scrollingContent.parentElement.appendChild(clone); // Ajoute le clone à la suite pour un effet continu
 });
 
-// Connecte au serveur WebSocket
-const socket = new WebSocket('ws://localhost:8080');
+// Créer une connexion WebSocket vers le serveur
+const websocket = new WebSocket('ws://localhost:8080');  // Assure-toi que l'URL est correcte
 
-// Affiche les messages entrants
-socket.onmessage = function(event) {
-    const newMessage = document.createElement('p');
-    newMessage.textContent = event.data;
-    chatDiv.appendChild(newMessage);
+// Quand la connexion est ouverte
+websocket.onopen = function() {
+    console.log('Connexion WebSocket ouverte');
 };
-
-// Envoie un message au serveur
-function sendMessage() {
-    const message = messageInput.value;
-    if (message) {
-        socket.send(message);
-        messageInput.value = ''; // Vide l'input après l'envoi
-    }
-}

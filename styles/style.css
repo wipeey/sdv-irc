@@ -1,45 +1,257 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*, body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: var(--secondary-color)
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-    --primary-color: #132234;
+    --primary-color: #2e84c7;
     --secondary-color: #ced4d9;
+    --third-color: #024a7c;
 }
 
 /* Responsive design for computer screens */
 @media screen and (min-width: 1024px) {
-    header {
-        background-color: var(--primary-color);
-    }
-    .nav {
-        background-color: var(--primary-color);
+    body {
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
     }
 
-    .App {
-        border-top: black 1px dotted;
-        border-bottom: black 2px dotted;
-        padding: 10vh 0 10vh 50vh;
+    header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        border-bottom: 1px solid black;
+    }
+
+    .logo {
+        width: 11vh;
+        padding: 1vh;
+    }
+
+    .Titre {
+        padding: 2vh 0 0 4vh;
+    }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
     }
 
     #chat {
-        width: 60%;
+        width: 70%;
+        height: 60vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+
+    /* Marquee */
+    .marquee-container {
+        background-color: var(--third-color);
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%; /* Ajuste la largeur selon tes besoins */
+        position: relative;
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll-infinite 20s linear infinite;
+    }
+
+    .marquee-item {
+        display: inline-block;
+        margin: 0 60px 0 60px; /* Espacement entre les éléments */
+        min-width: 150px; /* Ajuste la largeur des éléments */
+    }
+
+    @keyframes scroll-infinite {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Ajuste la valeur selon la largeur du contenu */
+        }
+    }
+}
+
+/* Styles pour les tablettes */
+@media screen and (max-width: 1023px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
         height: 50vh;
+        background-color: var(--secondary-color);
         overflow: hidden;
         border: black 1px solid;
-        border-radius: 2%;
+        border-radius: 1%;
         margin-bottom: 2em;
+    }
 
-    }
     #messageInput {
-        width: 60%;
-        overflow: hidden; /* Masquer la barre de défilement */
+        width: 70%; 
+        overflow: hidden; 
         min-height: 1.5em;
-        box-sizing: border-box; /* Inclut le padding dans la largeur */
-        line-height: 1.5em;     /* Assure un espacement uniforme entre les lignes */
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
     }
+    /* Marquee */
+    .marquee-container {
+        background-color: var(--third-color);
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%; /* Ajuste la largeur selon tes besoins */
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll-multiple 15s linear infinite;
+    }
+
+    .marquee-item {
+        display: inline-block;
+        margin-right: 40vh; /* Espacement entre les éléments */
+    }
+
+    @keyframes scroll-multiple {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    /**/
+}
+
+/* Pour les écrans de taille inférieure à 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    
+}
+
+/* Pour les écrans de taille inférieure à 480px (petits téléphones) */
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    
 }

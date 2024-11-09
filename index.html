@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta content="IE-Edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Related files -->
     <link href="styles/style.css" rel="stylesheet">
     <script src="scripts/script.js"></script>
 
+    <!-- Parameters -->
     <title>IRC Sup de Vinci</title>
     <link rel="icon" href="assets/logo/sdv_logo-transformed.ico" type="image/x-icon">
+
+    <meta name="title" content="IRC Sup de Vinci">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
 </head>
 <body>
     <header>
-        <h1 class="Titre">Titre</h1>
-        <div class="nav">
-
-        </div>
+        <div class="logo"><img src="assets/logo/sdv_logo-transformed.ico" alt="LOGO" class="logo"></div>
+        <h1 class="Titre">Bienvenue sur le Chat SDV !</h1>
     </header>
-    <section class="App">
-        <div id="chat"></div>
-        <input id="messageInput" maxlength="256" placeholder="Votre message (256 caractères max)" rows="1"></input>
+    <section id="content">
+        <div class="app">
+            <div id="chat"></div>
+            <input id="messageInput" maxlength="256" placeholder="Votre message (256 caractères max)" rows="1"></input>
+            <div class="marquee-container">
+                <div class="marquee-content" id="scrollingContent">
+                    <div class="marquee-item">Élément 1</div>
+                    <div class="marquee-item">Élément 2</div>
+                    <div class="marquee-item">Élément 3</div>
+                    <div class="marquee-item">Élément 4</div>
+                    <div class="marquee-item">Élément 5</div>
+                </div>
+            </div>
+        </div>
     </section>
+    <p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
 </body>
 </html>
