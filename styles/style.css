@@ -61,15 +61,23 @@ html, body {
         border-radius: 1%;
         margin-bottom: 2em;
     }
+    .input {
+        width: 70%; 
+    }
 
     #messageInput {
-        width: 70%; 
+        width: 93%; 
         overflow: hidden; 
         min-height: 1.5em;
         box-sizing: border-box; 
         line-height: 1.5em;
         color: black;
         margin-bottom: 1rem;
+    }
+    #sendButton {
+        width: 6%;
+        color: gray;
+        
     }
 
     /* Marquee */
