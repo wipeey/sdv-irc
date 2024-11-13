@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE-Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Related files -->
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/script.js"></script>
+
+    <!-- Parameters -->
+    <title>IRC Sup de Vinci</title>
+    <link rel="icon" href="assets/logo/sdv_logo-transformed.ico" type="image/x-icon">
+
+    <meta name="title" content="IRC Sup de Vinci">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+</head>
+<body>
+    <header>
+        <a href="#"><div class="logo"><img src="assets/logo/sdv_logo-transformed.png" alt="LOGO" class="logo"></div></a>
+        <h1 class="Titre">Bienvenue sur le Chat SDV !</h1>
+        <a href="pages/login.html" class="no-underline"><div class="connexion">Se connecter</div></a>
+    </header>
+    <section id="content">
+        <div class="app">
+            <div id="chat"></div>
+            <div class="input">
+                <input id="messageInput" maxlength="256" placeholder="Votre message (256 caractères max)" rows="1" autocomplete="off"></input>
+                <button id="sendButton">Send</button>
+            </div>
+            <script src="scripts/chat.js"></script>
+            <div class="marquee-container">
+                <div class="marquee-content" id="scrollingContent">
+                    <div class="marquee-item">Wael Chatoui</div>
+                    <div class="marquee-item">Kenzy Laboyrie</div>
+                    <div class="marquee-item">MAIS JOAN</div>
+                    <div class="marquee-item">Le BIOS DE LA PS2</div>
+                    <div class="marquee-item">Big up PA et Ayman</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <p>&copy; 2024 SDV Chat. All rights reserved.</p>
+    </footer>
+</body>
+</html>

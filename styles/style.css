@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2e84c7;
+    --secondary-color: #ced4d9;
+    --third-color: #024a7c;
+}
+
+/* Responsive design for computer screens */
+@media screen and (min-width: 1024px) {
+    body {
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+        padding: 0 1rem;
+    }
+
+    .logo, .Titre{
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100%;
+        max-height: 11vh;
+        /*width: 11vh;
+        padding: 1vh;*/
+    }
+
+    .connexion {
+        border: var(--secondary-color) 2px solid;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .connexion:hover {
+        background-color: var(--third-color);
+    }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    #chat {
+        width: 70%;
+        height: 60vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+    .input {
+        width: 70%; 
+    }
+
+    #messageInput {
+        width: 93%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    #sendButton {
+        width: 6%;
+        color: gray;
+        
+    }
+
+    /* Marquee */
+    .marquee-container {
+        background-color: var(--third-color);
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%; /* Ajuste la largeur selon tes besoins */
+        position: relative;
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll-infinite 20s linear infinite;
+    }
+
+    .marquee-item {
+        display: inline-block;
+        margin: 0 60px 0 60px; /* Espacement entre les éléments */
+        min-width: 150px; /* Ajuste la largeur des éléments */
+    }
+
+    @keyframes scroll-infinite {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Ajuste la valeur selon la largeur du contenu */
+        }
+    }
+    /* FOOTER */
+    footer {
+        width: 100%;
+        background-color: var(--thrid-color);
+        color: white;
+        padding: 1em 0; /* Space inside the footer */
+        display: flex;
+        justify-content: space-between; /* Place sections on opposite sides */
+        align-items: center;
+        border-top: 1px solid black;
+    }
+    
+    .footer-section {
+        margin-left: 1em;
+    }
+    
+    .footer-links {
+        margin-right: 1em;
+    }
+    
+    .footer-links a {
+        color: white;
+        margin-left: 1em;
+        transition: color 0.3s; /* Smooth color change */
+    }
+    
+    .footer-links a:hover {
+        color: var(--highlight-color);
+    }
+    
+}
+
+/* Styles pour les tablettes */
+@media screen and (max-width: 1023px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    /* Marquee */
+    .marquee-container {
+        background-color: var(--third-color);
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%; /* Ajuste la largeur selon tes besoins */
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll-multiple 15s linear infinite;
+    }
+
+    .marquee-item {
+        display: inline-block;
+        margin-right: 40vh; /* Espacement entre les éléments */
+    }
+
+    @keyframes scroll-multiple {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    /**/
+}
+
+/* Pour les écrans de taille inférieure à 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    
+}
+
+/* Pour les écrans de taille inférieure à 480px (petits téléphones) */
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .app {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+    }
+
+    #chat {
+        width: 70%;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        overflow: hidden;
+        border: black 1px solid;
+        border-radius: 1%;
+        margin-bottom: 2em;
+    }
+
+    #messageInput {
+        width: 70%; 
+        overflow: hidden; 
+        min-height: 1.5em;
+        box-sizing: border-box; 
+        line-height: 1.5em;
+        color: black;
+        margin-bottom: 1rem;
+    }
+    
+}
