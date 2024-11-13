@@ -7,7 +7,8 @@
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 html, body {
@@ -32,17 +33,36 @@ html, body {
         height: 12vh;
         width: 100%;
         display: flex;
-        justify-content: left;
+        justify-content: space-between;
+        align-items: center;
         border-bottom: 1px solid black;
+        padding: 0 1rem;
     }
 
-    .logo {
-        width: 11vh;
-        padding: 1vh;
+    .logo, .Titre{
+        display: flex;
+        align-items: center;
     }
 
-    .Titre {
-        padding: 2vh 0 0 4vh;
+    .logo img {
+        height: 100%;
+        max-height: 11vh;
+        /*width: 11vh;
+        padding: 1vh;*/
+    }
+
+    .connexion {
+        border: var(--secondary-color) 2px solid;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .connexion:hover {
+        background-color: var(--third-color);
     }
 
     .app {
@@ -50,7 +70,7 @@ html, body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+        min-height: 100vh;
     }
 
     #chat {

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2e84c7;
+    --secondary-color: #ced4d9;
+    --third-color: #024a7c;
+}
+
+/* Responsive design for computer screens */
+@media screen and (min-width: 1024px) {
+    body {
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+    header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        border-bottom: 1px solid black;
+    }
+
+    .logo {
+        width: 11vh;
+        padding: 1vh;
+    }
+
+    .Titre {
+        padding: 2vh 0 0 4vh;
+    }
+    .access {
+        height: 11vh;
+        width: 20%;
+        background-color: black;
+    }
+}
+
+/* Styles pour les tablettes */
+@media screen and (max-width: 1023px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+}
+
+/* Pour les écrans de taille inférieure à 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+}
+
+/* Pour les écrans de taille inférieure à 480px (petits téléphones) */
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+        background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+}
