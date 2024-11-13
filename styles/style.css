@@ -129,6 +129,36 @@ html, body {
             transform: translateX(-100%); /* Ajuste la valeur selon la largeur du contenu */
         }
     }
+    /* FOOTER */
+    footer {
+        width: 100%;
+        background-color: var(--thrid-color);
+        color: white;
+        padding: 1em 0; /* Space inside the footer */
+        display: flex;
+        justify-content: space-between; /* Place sections on opposite sides */
+        align-items: center;
+        border-top: 1px solid black;
+    }
+    
+    .footer-section {
+        margin-left: 1em;
+    }
+    
+    .footer-links {
+        margin-right: 1em;
+    }
+    
+    .footer-links a {
+        color: white;
+        margin-left: 1em;
+        transition: color 0.3s; /* Smooth color change */
+    }
+    
+    .footer-links a:hover {
+        color: var(--highlight-color);
+    }
+    
 }
 
 /* Styles pour les tablettes */
