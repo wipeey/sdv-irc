@@ -25,8 +25,12 @@
     </header>
     <section id="content">
         <div class="wrapper">
-            <form id="loginForm" action="http://localhost:5000/submit" method="POST">
-                <h2>Se connecter</h2>
+            <form action="#">
+                <h2>Créer un compte</h2>
+                <div class="input-field">
+                    <input type="text" required>
+                    <label for="#">Entrez votre pseudo</label>
+                </div>
                 <div class="input-field"><input type="email" required>
                     <label for="#">Entrez votre adresse email</label>
                 </div>
@@ -34,16 +38,9 @@
                     <input type="password" required>
                     <label for="#">Entrez votre mot de passe</label>
                 </div>
-                <div class="forget">
-                    <label for="Remember">
-                        <input type="checkbox" id="remember">
-                        <p>Rester connecté ?</p>
-                    </label>
-                    <a href="#">Mot de passe oublié ?</a>
-                </div>
                 <button type="submit">Se connecter</button>
                 <div class="register">
-                    <p>Vous n'avez pas de compte ? <a href="register.html">Créez-en un</a></p>
+                    <p>Vous avez déjà un compte ? <a href="login.html">Se connecter</a></p>
                 </div>
             </form>
         </div>
