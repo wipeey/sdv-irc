@@ -21,6 +21,7 @@ html, body {
     --primary-color: #2e84c7;
     --secondary-color: #ced4d9;
     --third-color: #024a7c;
+    --highlight-color: purple;
 }
 
 /* Responsive design for computer screens */
@@ -44,11 +45,172 @@ html, body {
     .Titre {
         padding: 2vh 0 0 4vh;
     }
+
+    /* CONTENT */
     .access {
-        height: 11vh;
-        width: 20%;
+        height: 5vh;
+        width: 100%;
         background-color: black;
     }
+    #content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        width: 100%;
+        padding: 0 10px;
+        margin: 2rem 0 2rem 0;
+    }
+    #content::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Move the overlay behind the content */
+    }    
+    .wrapper {
+        width: 400px;
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+        transition: all 0.3s ease;
+        opacity: 0; /* Initially hidden */
+        transform: translateY(20px); /* Move it down a bit */
+        transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+    }
+    .wrapper.show {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Move to original position */
+    }
+    .wrapper:hover {
+        box-shadow: 0 12px 48px tgba(0, 0, 0, 0.5);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: var(--secondary-color);
+        letter-spacing: 1px;
+    }
+    .wrapper a:hover {
+        text-decoration: underline;
+    }
+    button {
+        background-color: var(--third-color);
+        color: var(--first-color);
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 16px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    button:hover{
+        color: var(--secondary-color);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: var(--secondary-color);
+    }
+    .register {
+        text-align: var(--secondary-color);
+        margin-top: 30px;
+        color: var(--secondary-color);
+    }
+    .input-field {
+        position: relative;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        margin: 20px 0;
+    }
+    .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: var(--secondary-color);
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.3s ease;
+    }
+    .input-field input {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: var(--secondary-color);
+        padding: 0 10px;
+    }
+
+    .input-field input:focus~label,
+    .input-field input:valid~label {
+        font-size: 0.9rem;
+        top: 10px;
+        transform: translateY(-150%);
+        color: #ffdde1;
+    }
+    .forget {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 25px 0 35px 0;
+        color: var(--secondary-color);
+    }
+    #remember {
+        accent-color: #ffdde1;
+    }
+
+    .forget label {
+        display: flex;
+        align-items: center;
+    }
+
+    .forget label p {
+        margin-left: 8px;
+    }
+
+    .wrapper a {
+        color: #ffdde1;
+    }
+
+    /* FOOTER */
+    footer {
+        width: 100%;
+        background-color: var(--thrid-color);
+        color: white;
+        padding: 1em 0; /* Space inside the footer */
+        display: flex;
+        justify-content: space-between; /* Place sections on opposite sides */
+        align-items: center;
+        border-top: 1px solid black;
+    }
+    
+    .footer-section {
+        margin-left: 1em;
+    }
+    
+    .footer-links {
+        margin-right: 1em;
+    }
+    
+    .footer-links a {
+        color: white;
+        margin-left: 1em;
+        transition: color 0.3s; /* Smooth color change */
+    }
+    
+    .footer-links a:hover {
+        color: var(--highlight-color);
+    }
+    
 }
 
 /* Styles pour les tablettes */
