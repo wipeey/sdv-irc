@@ -1,6 +1,7 @@
 const input = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
-const chatMessages = document.getElementById('chat'); // Ajoutez cet élément à votre HTML
+const chatMessages = document.getElementById('chat');
+let messageLog = [];
 
 // Créer une connexion WebSocket vers le serveur
 const websocket = new WebSocket('ws://172.232.43.133:8080');
@@ -9,16 +10,18 @@ function sendMessage() {
     const message = input.value.trim();
     if (message && websocket.readyState === WebSocket.OPEN) {
         websocket.send(message);
-        displayMessage('Vous', message); // Affiche le message localement
+        displayMessage('Vous', message);
         input.value = '';
     }
 }
 
 function displayMessage(sender, message) {
-    const messageElement = document.createElement('div');
-    console.log(`${sender}: ${message}`);
-    //chatMessages.appendChild(messageElement);
-    //chatMessages.scrollTop = chatMessages.scrollHeight; // Défilement automatique
+    //console.log(`${sender}: ${message}`);
+    messageLog.push(message) // Ajoute le message aux logs
+    let messageElement = document.createElement('p');
+    messageElement.innerHTML = `${sender}: ${message}`
+    console.log(messageElement)
+    chatMessages.appendChild(messageElement);
 }
 
 // Handle Enter key press
@@ -41,6 +44,7 @@ websocket.onopen = function() {
 // Réception des messages
 websocket.onmessage = function(event) {
     displayMessage('Autre', event.data);
+
 }
 
 // Gestion des erreurs et de la fermeture
