@@ -10,14 +10,21 @@ wss.on('connection', (ws) => {
     ws.on('message', (message) => {
         console.log(`Message reçu : ${message}`);
 
-        // Envoie le même message à tous les clients connectés
+        // Envoie le même message à tous les clients connectés, sauf à l'expéditeur
         wss.clients.forEach(client => {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
-                client.send(message);
+                client.send(message.toString()); // Convertit le message en chaîne
             }
         });
     });
 
     // Envoie un message d'accueil au nouveau client
     ws.send('Bienvenue dans le chat!');
+
+    // Gestion de la déconnexion
+    ws.on('close', () => {
+        console.log('Un client s\'est déconnecté');
+    });
 });
+
+console.log('Serveur WebSocket démarré sur le port 8080');
