@@ -79,7 +79,7 @@ html, body {
         height: 60vh;
         background-color: var(--secondary-color);
         overflow: hidden;
-        border-radius: 1%;
+        border-radius: 10px;
         margin-bottom: 2em;
     }
     .input {
@@ -98,7 +98,6 @@ html, body {
     #sendButton {
         width: 6%;
         color: gray;
-        
     }
 
     /* Marquee */
@@ -141,32 +140,62 @@ html, body {
         align-items: center;
         border-top: 1px solid black;
     }
-    
     .footer-section {
         margin-left: 1em;
     }
-    
     .footer-links {
         margin-right: 1em;
     }
-    
     .footer-links a {
         color: white;
         margin-left: 1em;
         transition: color 0.3s; /* Smooth color change */
     }
-    
     .footer-links a:hover {
         color: var(--highlight-color);
     }
-    
 }
 
 /* Styles pour les tablettes */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
     body {
         min-height: 100vh;
         background: linear-gradient(to right, var(--third-color), var(--primary-color));
+    }
+    header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+        padding: 0 1rem;
+    }
+
+    .logo, .Titre{
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100%;
+        max-height: 11vh;
+        /*width: 11vh;
+        padding: 1vh;*/
+    }
+
+    .connexion {
+        border: var(--secondary-color) 2px solid;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .connexion:hover {
+        background-color: var(--third-color);
     }
 
     p {
@@ -179,7 +208,7 @@ html, body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+        min-height: 100vh;
     }
 
     #chat {
@@ -191,7 +220,9 @@ html, body {
         border-radius: 1%;
         margin-bottom: 2em;
     }
-
+    .input {
+        width: 70%; 
+    }
     #messageInput {
         width: 70%; 
         overflow: hidden; 
@@ -201,13 +232,17 @@ html, body {
         color: black;
         margin-bottom: 1rem;
     }
+    #sendButton {
+        width: 2rem;
+        color: gray;
+    }
     /* Marquee */
     .marquee-container {
         background-color: var(--third-color);
         display: flex;
         overflow: hidden;
         white-space: nowrap;
-        width: 100%; /* Ajuste la largeur selon tes besoins */
+        width: 100%;
     }
 
     .marquee-content {
@@ -217,7 +252,7 @@ html, body {
 
     .marquee-item {
         display: inline-block;
-        margin-right: 40vh; /* Espacement entre les éléments */
+        margin-right: 20vh; /* Espacement entre les éléments */
     }
 
     @keyframes scroll-multiple {
@@ -228,7 +263,31 @@ html, body {
             transform: translateX(-100%);
         }
     }
-    /**/
+    /* FOOTER */
+    footer {
+        width: 100%;
+        background-color: var(--thrid-color);
+        color: white;
+        padding: 1em 0; /* Space inside the footer */
+        display: flex;
+        justify-content: space-between; /* Place sections on opposite sides */
+        align-items: center;
+        border-top: 1px solid black;
+    }
+    .footer-section {
+        margin-left: 1em;
+    }
+    .footer-links {
+        margin-right: 1em;
+    }
+    .footer-links a {
+        color: white;
+        margin-left: 1em;
+        transition: color 0.3s; /* Smooth color change */
+    }
+    .footer-links a:hover {
+        color: var(--highlight-color);
+    }
 }
 
 /* Pour les écrans de taille inférieure à 768px (tablettes et téléphones) */
@@ -279,6 +338,43 @@ html, body {
         min-height: 100vh;
         background: linear-gradient(to right, var(--third-color), var(--primary-color));
     }
+    header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+        padding: 0 1rem;
+    }
+
+    .logo, .Titre{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .logo img {
+        height: 100%;
+        max-height: 11vh;
+        /*width: 11vh;*/
+        padding: 1vh;
+    }
+
+    .connexion {
+        border: var(--secondary-color) 2px solid;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        padding: 0 1rem 0 1rem;
+        font-size: 12px;
+    }
+
+    .connexion:hover {
+        background-color: var(--third-color);
+    }
 
     p {
         font-size: 30px;
@@ -290,7 +386,7 @@ html, body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Cela assure que .app prend toute la hauteur de l'écran */
+        min-height: 80vh;
     }
 
     #chat {
@@ -299,10 +395,12 @@ html, body {
         background-color: var(--secondary-color);
         overflow: hidden;
         border: black 1px solid;
-        border-radius: 1%;
+        border-radius: 10px;
         margin-bottom: 2em;
     }
-
+    .input {
+        width: 70%; 
+    }
     #messageInput {
         width: 70%; 
         overflow: hidden; 
@@ -312,5 +410,42 @@ html, body {
         color: black;
         margin-bottom: 1rem;
     }
-    
+    #sendButton {
+        width: 2.5rem;
+        color: gray;
+    }
+    /* Marquee */
+    .marquee-container {
+        display: none;
+    }
+    /* FOOTER */
+    footer {
+        width: 100%;
+        background-color: var(--thrid-color);
+        color: white;
+        padding: 1em 0; /* Space inside the footer */
+        
+        display: inline;
+        /*justify-content: center; /* Place sections on opposite sides 
+        align-items: center;*/
+        border-top: 1px solid black;
+    }
+    .footer-section {
+        margin-left: 1em;
+    }
+    .footer-links {
+        margin-right: 1em;
+    }
+    .footer-links a {
+        color: white;
+        font-size: 16px;
+        margin-left: 1em;
+        transition: color 0.3s; /* Smooth color change */
+    }
+    .footer-links a:hover {
+        color: var(--highlight-color);
+    }
+    .footer, p {
+        font-size: 16px;
+    }
 }

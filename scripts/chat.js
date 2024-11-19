@@ -18,8 +18,8 @@ function sendMessage() {
 function displayMessage(sender, message) {
     //console.log(`${sender}: ${message}`);
     messageLog.push(message) // Ajoute le message aux logs
-    let messageElement = document.createElement('p');
-    messageElement.innerHTML = `${sender}: ${message}`
+    const messageElement = document.createElement('p');
+    messageElement.textContent = `${sender}: ${message}`;
     console.log(messageElement)
     chatMessages.appendChild(messageElement);
 }
