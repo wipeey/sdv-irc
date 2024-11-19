@@ -6,15 +6,16 @@
 
 http://172.232.43.133/
 
-## Page principale (chat)
-***Connected files :***
+### Page principale (chat)
+<bold><italic>Connected files :<italic><bold>
 - index.html
 - styles/style.css
 - scripts/script.js (Handling frontend )
 - scripts/chat.js (Handle msg retrieving and display)
 
-## Page de connexion (login)
+### Page de connexion (login)
 - pages/login.html
 - pages/register.html
 - styles/login.css
-\n<sub>Note that the style of register.html is joined to login.css</sub>
+
+<sub>Note that the style of register.html is joined to login.css</sub>
