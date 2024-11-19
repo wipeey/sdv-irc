@@ -19,3 +19,11 @@ http://172.232.43.133/
 - styles/login.css
 
 <sub>Note that the style of register.html is joined to login.css</sub>
+
+### Backend
+* Server:
+ - server.js (Websocket)
+
+### Database
+* Chat:
+ - json file inside db ?
