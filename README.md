@@ -7,7 +7,7 @@
 http://172.232.43.133/
 
 ### Page principale (chat)
- _**Connected files :** _
+**Connected files :** 
 - index.html
 - styles/style.css
 - scripts/script.js (Handling frontend )
